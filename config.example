@@ -1,7 +1,10 @@
 #!/bin/bash
 
 # Factorio save location
-SAVE_LOC=/path/to/factorio/saves/
+FSAVE_LOC=/path/to/factorio/saves/
+
+# Archive save location
+ASAVE_LOC=/path/to/factorio/saves/archive/
 
 # How many days do you want to archive for?
 SAVE_DAYS=2
