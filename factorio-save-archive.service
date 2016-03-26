@@ -1,0 +1,15 @@
+[Unit]
+description=A Factorio save archive manager
+# Require Factorio to be running, because why else would you be running this service?
+Requires=factorio.service
+after=factorio.service
+
+[Service]
+User=factorio
+ExecStart=/usr/local/bin/factorio-save-archive start
+ExecStop=/usr/local/bin/factorio-save-archive stop
+RestartSec=10
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
