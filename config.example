@@ -3,3 +3,5 @@
 # Factorio save location
 SAVE_LOC=/path/to/factorio/saves/
 
+# How many days do you want to archive for?
+SAVE_DAYS=2
