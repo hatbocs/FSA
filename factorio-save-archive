@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Load config file
+if [ -L $0 ]; then
+  source `readlink -e $0 | sed "s:[^/]*$:config:"`
+else
+  source `echo $0 | sed "s:[^/]*$:config:"`
+fi
+
+# Check defined save location and has existing .zip
+if ! ls ${SAVE_LOC}/*.zip then
+  echo "${SAVE_LOC} does not have a .zip"
+  exit 1
+fi
+
