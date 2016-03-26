@@ -9,7 +9,10 @@ fi
 
 # Check defined save location and has existing .zip
 if ! ls ${SAVE_LOC}/*.zip then
-  echo "${SAVE_LOC} does not have a .zip"
+  echo "${SAVE_LOC} does not have a .zip: probably not a save location"
   exit 1
 fi
 
+start() {
+  
+}
