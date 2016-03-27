@@ -8,10 +8,25 @@ else
 fi
 
 # Check defined save location and has existing .zip
-if ! ls ${SAVE_LOC}/*.zip then
+if ! ls "${SAVE_LOC}"/*.zip then
   echo "${SAVE_LOC} does not have a .zip: probably not a save location"
   exit 1
 fi
+
+create_archive() {
+  if ! [mkdir -p "${ASAVE_LOC}"] then
+    echo "Could not make the archive directory. Try checking permissions." 1>&2
+    exit 1
+  fi
+}
+
+archive_prep() {
+  if [ -d "${ASAVE_LOC}"] then
+    #stuff
+  else
+    create_archive
+  fi
+}
 
 start() {
   
